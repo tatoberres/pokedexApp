@@ -1,3 +1,6 @@
+# Créer une BDD pour le Projet Pokedex
+
+Depuis le terminal, se connecter à Postgres:
 sudo -i -u postgres psql
 
 CREATE ROLE pokemon LOGIN PASSWORD '123456';
