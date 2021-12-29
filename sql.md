@@ -1,33 +1,30 @@
 # Créer une BDD pour le Projet Pokedex
 
-Depuis le terminal, se connecter à Postgres:
-sudo -i -u postgres psql
+Depuis le terminal, se connecter à **Postgres** :
 
+```shell
+sudo -i -u postgres psql
+```
+
+Créer un **Role** et une **Base des Données** :
+
+```psql
 CREATE ROLE pokemon LOGIN PASSWORD '123456';
 
 CREATE DATABASE pokemon OWNER pokemon;
+```
 
-Pour copier/refaire la BDD :
+Pour **insérer les données** (ou les écraser en cas d'erreur) :
+
+```shell
 psql -h localhost -U pokemon -d pokemon -f app/data/create_db.sql
+```
 
-Pour se connecter:
+Pour **se connecter** :
+
+```shell
 psql localhost -U pokemon -d pokemon
+```
+## Et si je veux ma BDD en local ?
 
-Pour exporter un json dans un fichier SQL:
-https://www.convertjson.com/json-to-sql.htm
-
-<!-- 
-tapper:
-\d pokedex
-
-Donne ca:
-Table « public.pokedex »
- Colonne |       Type        | Collationnement | NULL-able | Par défaut 
----------+-------------------+-----------------+-----------+------------
- id      | integer           |                 | not null  | 
- name_en | character varying |                 |           | 
- name_ja | character varying |                 |           | 
- name_ch | character varying |                 |           | 
- name_fr | character varying |                 |           | 
-Index : "pokedex_pkey" PRIMARY KEY, btree (id) 
--->
+Revenir à la [page principal](./readme.md) et suivre les pas pour travailler en local.
