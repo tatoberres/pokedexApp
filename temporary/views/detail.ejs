@@ -1,0 +1,33 @@
+<%- include('partials/header.ejs') %>
+
+<h1>Détails de </h1>
+<div>
+    <img src="/img/<%= unPoke.numero %>.png" alt="">
+    <div>
+        <h2><%= unPoke.nom %></h2>
+        <ul> 
+            <% for (const pokemon of unPoke.type) {%>
+                <li><%= pokemon %></li>
+            <% } %>
+        </ul>
+        <h3>Statistiques</h3>
+        <div>
+            <span>PV </span><span><%= unPoke.pv %></span><span>barrita</span>
+        </div>
+        <div>
+            <span>Attaque </span><span><%= unPoke.attaque %></span><span>barrita</span>
+        </div>
+        <div>
+            <span>Défense </span><span><%= unPoke.defense %></span><span>barrita</span>
+        </div>
+        <div>
+            <span>Attaque Spé. </span><span><%= unPoke.attaque_spe %></span><span>barrita</span>
+        </div>
+        <div>
+            <span>Défense Spé. </span><span><%= unPoke.defense_spe %></span><span>barrita</span>
+        </div>
+        <div>
+            <span>Vitesse </span><span><%= unPoke.vitesse %></span><span>barrita</span>
+        </div> 
+    </div>
+</div>
